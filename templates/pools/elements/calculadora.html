@@ -1,0 +1,39 @@
+	<div class="modal calculadora modal-dialog-bg" id="calculadora_div" style="display:none"></div>
+	<div class="modal calculadora modal-dialog-calculadora-outer" id="calculadora_box" style="display:none">
+		<div><a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Cerrar','','{{ STATIC_URL }}images/bt_cerrar_over.png',1)"><img class="calc_cancel" style="float:right; margin-top:10px; margin-right:10px;" src="{{ STATIC_URL }}images/bt_cerrar.png" alt="Cerrar" name="Cerrar" height="23" border="0"></a></div>
+		<div class="span6 modal calculadora modal-dialog-calculadora-inner" id="calc_src">
+			<table class="table-bordered04">
+				<tbody>
+					<tr style="background-color:#369; color:#FFF">
+						<td><h2>Por favor introduzca las indicaciones médicas de su tratamiento</h2></td>
+					</tr>
+					<tr>
+						<td style="padding-top:25px; background-color:#f8f8f8; border-bottom: 1px solid #e1e1e1"><label style="float:left;" for="select2"></label>
+							{{ calculadora.medida_select }}
+							{{ calculadora.tipo }}<!-- Hidden Field con la info del tipo de medicamento o principio -->
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-top:25px; background-color:#fcfcfc;"><h3>Cantidad:</h3>{{ calculadora.cantidad }}<h3>Por:</h3><label style="float:left;" for="id_cantidad_select"></label>
+							{{ calculadora.cantidad_select }}
+						</td>
+					</tr>
+					<tr>
+						<td style="background-color:#fcfcfc; border-bottom: 1px solid #e1e1e1; padding-bottom:15px;">
+							<h3>Duración:</h3>
+							{% if calc_30dias %}<span style="float:left;margin-right:10px;">{{ calculadora.duracion_dropdown }}</span><label style="float:left;" for="id_duracion_dropdown"></label>
+							{% else %}{{ calculadora.duracion }}<label style="float:left;" for="id_duracion_select"></label>{% endif %}
+							<h3> Día(s)</h3>
+						</td>
+					</tr>
+					<tr>
+						<td style="background-color:#f8f8f8; padding-right:20px; padding-bottom:25px;">
+							<a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Calcular','','{{ STATIC_URL }}design/img/bt_calcular_over.png',1)"><img class="calc_ok" style="margin-top:20px;display:block;margin-left:auto;margin-right:auto;" src="{{ STATIC_URL }}design/img/bt_calcular.png" alt="Calcular" name="Calcular" height="56" border="0"></a>
+							<a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('NoIndicaciones','','{{ STATIC_URL }}design/img/bt_no_indicaciones_over.png',1)"><img class="no_indicaciones" style="margin-top:20px;display:block;margin-left:auto;margin-right:auto;" src="{{ STATIC_URL }}design/img/bt_no_indicaciones.png" alt="Sin Indicaciones Médicas" name="NoIndicaciones" height="56" border="0"></a>
+							<!--<h4 class="nextnav">Regresar</h4><a onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Regresar','','{{ STATIC_URL }}design/img/bt_previous_over.png',1)"><img class="previousnavicon calc_cancel" src="{{ STATIC_URL }}design/img/bt_previous.png" alt="Regresar" name="Regresar" width="25" height="26" border="0"></a>-->
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>

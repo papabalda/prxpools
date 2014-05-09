@@ -1,0 +1,9 @@
+{% extends "audit/elements/header.html" %}
+{% block swap_module %}
+{% ifequal 'ADMINISTRADOR' user.groups.all.0.name %}
+	<div class="topmenuicons"><a href="/orden/" onMouseOut="MM_swapImgRestore()" title="Ir a módulo de órdenes" onMouseOver="MM_swapImage('Orden','','{{ STATIC_URL }}design/img/bt_swap_over.png',1)"><img id="Orden" src="{{ STATIC_URL }}design/img/bt_swap.png" alt="Orden"></a></div>
+{% endifequal %}
+{% ifequal 'GERENTE' user.groups.all.0.name %}
+	<div class="topmenuicons"><a href="/orden/" onMouseOut="MM_swapImgRestore()" title="Ir a módulo de órdenes" onMouseOver="MM_swapImage('Orden','','{{ STATIC_URL }}design/img/bt_swap_over.png',1)"><img id="Orden" src="{{ STATIC_URL }}design/img/bt_swap.png" alt="Orden"></a></div>
+{% endifequal %}
+{% endblock %}

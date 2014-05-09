@@ -1,0 +1,13 @@
+{% extends "elements/header.html" %}
+{% block faq_manual_y_home %}
+<div class="topmenuicons"><a href="/audit/faqs" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Faqs','','{{ STATIC_URL }}design/img/bt_faqs_over.png',1)"><img id="Faqs" src="{{ STATIC_URL }}design/img/bt_faqs.png" alt="Faqs"></a></div>
+{% ifequal 'ADMINISTRADOR' user.groups.all.0.name %}
+<div class="topmenuicons"><a href="/PRXAnalyzer/home/" target="_blank" title="PRX Analyzer" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Analyzer','','{{ STATIC_URL }}PRXAnalyzer_static/design/img/bt_estadistica_over.png',1)"><img id="Analyzer" src="{{ STATIC_URL }}PRXAnalyzer_static/design/img/bt_estadistica.png" alt="Analyzer"></a></div>
+{% endifequal %}
+{% ifequal 'GERENTE' user.groups.all.0.name %}
+<div class="topmenuicons"><a href="/PRXAnalyzer/home/" target="_blank" title="PRX Analyzer" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Analyzer','','{{ STATIC_URL }}PRXAnalyzer_static/design/img/bt_estadistica_over.png',1)"><img id="Analyzer" src="{{ STATIC_URL }}PRXAnalyzer_static/design/img/bt_estadistica.png" alt="Analyzer"></a></div>
+{% endifequal %}
+<div class="topmenuicons"><a href="{{ STATIC_URL }}docs/manual_audit.pdf" title="Manual de Usuario" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Manual de Usuario','','{{ STATIC_URL }}design/img/bt_manual_over.png',1)"><img id="Manual de Usuario" src="{{ STATIC_URL }}design/img/bt_manual.png" alt="Manual de Usuario"></a></div>
+{% block swap_module %}{% endblock %}
+<div class="topmenuicons"><a href="/audit/" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Home','','{{ STATIC_URL }}design/img/bt_home_over.png',1)"><img id="Home" src="{{ STATIC_URL }}design/img/bt_home.png" alt="Home"></a></div>
+{% endblock %}
